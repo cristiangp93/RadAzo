@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>
+      <img src="../../assets/rad.png"/>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content img src="../assets/slider_background.jpg" alt="">
+<h1 align="center"><img src="../../assets/logo.png"/></h1>
+    <ion-card color="danger" class="welcome-card">
+	 
+      <h1 align="center" class="estado"
+		[ngClass]="{'baja': lastLectura <= 2 && lastLectura >0,
+					'moderada': lastLectura >=3 && lastLectura <=5,
+					'alta': lastLectura >=6 && lastLectura <=7,
+					'MuyAlta': lastLectura >=8 && lastLectura <=10,
+					'Extremadamente': lastLectura >= 11}">{{lastLectura}}</h1>
+     
+	 </ion-card>
+	 <ion-card class="welcome-card">  
+	  <div class="hero_side_text">
+					<div class="v_slider_image"> 
+						<table class="table table-striped table-bordered table-hover table-condensed" style="width: 50%" align="center">
+							<tr class="active">
+								<th class="text-center" colspan="3">Categorías de exposición</th>                                    
+							</tr>
+							<tr class="active">
+								<th class="text-center">Categoria</th>
+								<th class="text-center">Valores</th>
+								<th class="text-center">Colores</th>                                    
+							</tr>
+							<tr class="text-center">
+								<td>Baja</td>
+								<td>< 2</td>
+								<td bgcolor="#4eb400"></td>
+							</tr>
+							<tr class="text-center">
+								<td>Moderada</td>
+								<td >3 - 5</td>
+								<td bgcolor="#f7e400"></td>
+							</tr>
+							<tr class="text-center">
+								<td>Alta</td>
+								<td >6 - 7</td>
+								<td bgcolor="#f85900"></td>
+							</tr>
+							<tr class="text-center">
+								<td>Muy alta</td>
+								<td >8 - 10</td>
+								<td bgcolor="#d8001d"></td>
+							</tr>
+							<tr class="text-center">
+								<td>Extremadamente alta</td>
+								<td >11 +</td>
+								<td bgcolor="#998cff"></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			 
+    </ion-card>
+</ion-content>

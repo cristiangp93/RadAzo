@@ -1,0 +1,47 @@
+.welcome-card img {
+  max-height: 35vh;
+  overflow: hidden;
+}
+
+.v_slider_image
+{
+	position: center;
+	top: 0%;
+	-webkit-transform: translateY(0%);
+	-moz-transform: translateY(0%);
+	-ms-transform: translateY(0%);
+	-o-transform: translateY(0%);
+	transform: translateY(0%);
+	right: 0; 
+}
+
+.estado {
+	font-size:250px;
+	color:#20a12f;
+	 
+}
+
+.baja {
+	color: #4eb400;  
+	background:#FFFFCC url('../../assets/iconos/baja.png')center bottom no-repeat; 
+}
+
+.moderada {
+	color: #f7e400;
+	background:#FFFFCC url('../../assets/iconos/moderada.png')center bottom no-repeat; 
+}
+
+.alta {
+	color: #f85900;
+	background:#FFFFCC url('../../assets/iconos/alta.png')center bottom no-repeat;
+}
+
+.MuyAlta {
+	color: #d8001d;
+	background:#FFFFCC url('../../assets/iconos/MuyAlta.png')center bottom no-repeat;
+}
+
+.Extremadamente {
+	color: purple;
+	background:#FFFFCC url('../../assets/iconos/extremo.png')center bottom no-repeat;
+}
