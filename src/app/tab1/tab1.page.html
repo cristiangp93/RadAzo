@@ -7,17 +7,29 @@
 </ion-header>
 
 <ion-content img src="../assets/slider_background.jpg" alt="">
-<h1 align="center"><img src="../../assets/logo.png"/></h1>
-    <ion-card color="danger" class="welcome-card">
-	 
-      <h1 align="center" class="estado"
-		[ngClass]="{'baja': lastLectura <= 2 && lastLectura >0,
+	<h1 align="center"><img src="../../assets/logo.png"/></h1>
+  <ion-card *ngIf="!loading && lastLectura" color="danger" class="welcome-card">
+
+		<h1 align="center" class="estado"
+			[ngClass]="{'baja': lastLectura <= 2 && lastLectura >0,
 					'moderada': lastLectura >=3 && lastLectura <=5,
 					'alta': lastLectura >=6 && lastLectura <=7,
 					'MuyAlta': lastLectura >=8 && lastLectura <=10,
-					'Extremadamente': lastLectura >= 11}">{{lastLectura}}</h1>
+					'Extremadamente': lastLectura >= 11}">
+			{{lastLectura}}
+		</h1>
      
 	 </ion-card>
+
+	<ion-card *ngIf="loading">
+		<p text-center>Obteniendo datos...</p>
+		<ion-progress-bar type="indeterminate" reversed="true"></ion-progress-bar>
+	</ion-card>
+
+	<ion-card *ngIf="!loading && !lastLectura">
+		<p text-center>Error al obtener información</p>
+	</ion-card>
+
 	 <ion-card class="welcome-card">  
 	  <div class="hero_side_text">
 					<div class="v_slider_image"> 
