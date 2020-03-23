@@ -8,39 +8,39 @@
 
 <ion-content img src="../assets/slider_background.jpg" alt="">
 	<h1 align="center"><img src="../../assets/logo.png"/></h1>
-  <ion-card *ngIf="!loading && lastLectura" color="danger" class="welcome-card">
+  <ion-card *ngIf="!loading" color="danger" class="welcome-card">
 
 		<h1 align="center" class="estado"
-			[ngClass]="{'baja': lastLectura <= 2 && lastLectura >0,
-					'moderada': lastLectura >=3 && lastLectura <=5,
-					'alta': lastLectura >=6 && lastLectura <=7,
-					'MuyAlta': lastLectura >=8 && lastLectura <=10,
-					'Extremadamente': lastLectura >= 11}">
-			{{lastLectura}}
+			[ngClass]="{'baja': ws.dataAPI[ws.contadorDatos] <= 2 && ws.dataAPI[ws.contadorDatos] >0,
+					'moderada': ws.dataAPI[ws.contadorDatos] >=3 && ws.dataAPI[ws.contadorDatos] <=5,
+					'alta': ws.dataAPI[ws.contadorDatos] >=6 && ws.dataAPI[ws.contadorDatos] <=7,
+					'MuyAlta': ws.dataAPI[ws.contadorDatos] >=8 && ws.dataAPI[ws.contadorDatos] <=10,
+					'Extremadamente': ws.dataAPI[ws.contadorDatos] >= 11}">
+			{{ ws.dataAPI[ws.contadorDatos] }}
 		</h1>
      
 	 </ion-card>
 
 	<ion-card *ngIf="loading">
-		<p text-center>Obteniendo datos...</p>
+		<p class="ion-text-center">Obteniendo datos...</p>
 		<ion-progress-bar type="indeterminate" reversed="true"></ion-progress-bar>
 	</ion-card>
 
-	<ion-card *ngIf="!loading && !lastLectura">
-		<p text-center>Error al obtener información</p>
-	</ion-card>
+	<!--<ion-card *ngIf="!loading">
+		<p class="ion-text-center">Error al obtener información</p>
+	</ion-card>-->
 
-	 <ion-card class="welcome-card">  
+	 <ion-card class="welcome-card">
 	  <div class="hero_side_text">
-					<div class="v_slider_image"> 
+					<div class="v_slider_image">
 						<table class="table table-striped table-bordered table-hover table-condensed" style="width: 50%" align="center">
 							<tr class="active">
-								<th class="text-center" colspan="3">Categorías de exposición</th>                                    
+								<th class="text-center" colspan="3">Categorías de exposición</th>
 							</tr>
 							<tr class="active">
 								<th class="text-center">Categoria</th>
 								<th class="text-center">Valores</th>
-								<th class="text-center">Colores</th>                                    
+								<th class="text-center">Colores</th>
 							</tr>
 							<tr class="text-center">
 								<td>Baja</td>
